@@ -6,11 +6,11 @@
 /*   By: amarcela <amarcela@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:17:55 by amarcela          #+#    #+#             */
-/*   Updated: 2022/09/30 03:50:31 by amarcela         ###   ########.fr       */
+/*   Updated: 2022/09/30 03:54:45 by amarcela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_rest(char	*str)
 {
@@ -90,15 +90,15 @@ char	*read_fd(int fd, char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*str[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	str = read_fd(fd, str);
-	if (!str)
+	str[fd] = read_fd(fd, str[fd]);
+	if (!str[fd])
 		return (NULL);
-	line = get_line(str);
-	str = get_rest(str);
+	line = get_line(str[fd]);
+	str[fd] = get_rest(str[fd]);
 	return (line);
 }
