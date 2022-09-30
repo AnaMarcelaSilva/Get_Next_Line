@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcela <amarcela@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:23:24 by amarcela          #+#    #+#             */
-/*   Updated: 2022/09/30 03:41:15 by amarcela         ###   ########.fr       */
+/*   Updated: 2022/09/30 11:10:41 by amarcela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,30 @@ void	*ft_calloc(size_t nitems, size_t size)
 	return (ptr);
 }
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char    *s3;
-    int     i;
-    int     j;
+	char	*s3;
+	int		i;
+	int		j;
 
-    s3 = malloc (sizeof (char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-    if (!s3)
-        return (NULL);
-    i = 0;
-    while (s1[i] != '\0')
-    {
-        s3[i] = (char)s1[i];
-        i++;
-    }
-    j = 0;
-    while (s2[j] != '\0')
-    {
-        s3[i] = (char)s2[j];
-        i++;
-        j++;
-    }
-    s3[i] = '\0';
-    return (s3);
+	s3 = malloc (sizeof (char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s3)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		s3[i] = (char)s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		s3[i] = (char)s2[j];
+		i++;
+		j++;
+	}
+	s3[i] = '\0';
+	return (s3);
 }
 
 char	*ft_strchr(const char *str, int c)

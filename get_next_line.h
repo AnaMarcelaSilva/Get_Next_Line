@@ -6,15 +6,19 @@
 /*   By: amarcela <amarcela@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:15:22 by amarcela          #+#    #+#             */
-/*   Updated: 2022/09/30 03:52:41 by amarcela         ###   ########.fr       */
+/*   Updated: 2022/09/30 11:18:38 by amarcela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+# include <unistd.h>
+# include <stdlib.h>
 
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t nitems, size_t size);
